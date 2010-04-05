@@ -1,4 +1,4 @@
-<cfcomponent extends="wheelsMapping.model">
+<cfcomponent extends="wheelsMapping.Model">
 
 	<cffunction name="init">
 		<cfset hasMany(name="photogalleries")>

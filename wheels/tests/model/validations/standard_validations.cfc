@@ -1,6 +1,6 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
-	<cfset global.user = createobject("component", "wheelsMapping.model").$initModelClass("user")>
+	<cfset global.user = createobject("component", "wheelsMapping.Model").$initModelClass("user")>
 
 	<!--- validatesConfirmationOf --->
 	<cffunction name="test_validatesConfirmationOf_valid">

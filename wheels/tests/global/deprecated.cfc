@@ -1,4 +1,4 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
 	<cfset global.controller = createobject("component", "wheelsMapping.Controller")>
 	<cfset global.controller.$test_deprecated_method = $test_deprecated_method>

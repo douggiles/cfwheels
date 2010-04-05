@@ -1,4 +1,4 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
 	<cfset loadModels("user")>
 	<cfset global.args = {username="myusername", password="mypassword", firstname="myfirstname", lastname="mylastname"}>

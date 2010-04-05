@@ -1,6 +1,6 @@
 <cfsetting requesttimeout="10000" showdebugoutput="false">
 <cfparam name="params.type" default="core">
-<cfset testresults = $createObjectFromRoot(path=application.wheels.wheelsComponentPath, fileName="test", method="$WheelsRunner", options=params)>
+<cfset testresults = $createObjectFromRoot(path=application.wheels.wheelsComponentPath, fileName="Test", method="$WheelsRunner", options=params)>
 
 <cfif !isStruct(testresults)>
 	<cfoutput><p>No tests found.</p></cfoutput>

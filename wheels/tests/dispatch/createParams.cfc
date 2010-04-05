@@ -1,6 +1,6 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
-	<cfset global.dispatch = createobject("component", "wheelsMapping.dispatch")>
+	<cfset global.dispatch = createobject("component", "wheelsMapping.Dispatch")>
 	<cfset global.args = {}>
 	<cfset global.args.path = "home">
 	<cfset global.args.route = {pattern="", controller="wheels", action="wheels"}>

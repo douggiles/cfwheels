@@ -1,6 +1,6 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
-	<cfset global.user = createobject("component", "wheelsMapping.model").$initModelClass("Users")>
+	<cfset global.user = createobject("component", "wheelsMapping.Model").$initModelClass("Users")>
 	<cfset global.user.username = "TheLongestNameInTheWorld">
 	<cfset global.args = {}>
 	<cfset global.args.property = "username">
