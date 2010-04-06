@@ -1,7 +1,7 @@
-<cfcomponent extends="wheelsMapping.test">
+<cfcomponent extends="wheelsMapping.Test">
 
 	<cfinclude template="/wheelsMapping/global/functions.cfm">
-	<cfset global.dispatch = createobject("component", "wheelsMapping.dispatch")>
+	<cfset global.dispatch = createobject("component", "wheelsMapping.Dispatch")>
 
 	<cffunction name="setup">
 		<cfset SavedRoutes = duplicate(application.wheels.routes)>
