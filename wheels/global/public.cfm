@@ -347,13 +347,22 @@
 			loc.route = $findRoute(argumentCollection=arguments);
 			if (arguments.URLRewriting == "Off")
 			{
-				loc.returnValue = loc.returnValue & "?controller=" & $hyphenize(loc.route.controller);
-				loc.returnValue = loc.returnValue & "&action=" & $hyphenize(loc.route.action);
+				loc.returnValue = loc.returnValue & "?controller=";
+				if (Len(arguments.controller))
+					loc.returnValue = loc.returnValue & $hyphenize(arguments.controller);
+				else
+					loc.returnValue = loc.returnValue & $hyphenize(loc.route.controller);
+				loc.returnValue = loc.returnValue & "&action=";
+				if (Len(arguments.action))
+					loc.returnValue = loc.returnValue & $hyphenize(arguments.action);
+				else
+					loc.returnValue = loc.returnValue & $hyphenize(loc.route.action);
 				loc.iEnd = ListLen(loc.route.variables);
 				for (loc.i=1; loc.i <= loc.iEnd; loc.i++)
 				{
 					loc.property = ListGetAt(loc.route.variables, loc.i);
-					loc.returnValue = loc.returnValue & "&" & loc.property & "=" & $URLEncode(arguments[loc.property]);
+					if (loc.property != "controller" && loc.property != "action")
+						loc.returnValue = loc.returnValue & "&" & loc.property & "=" & $URLEncode(arguments[loc.property]);
 				}
 			}
 			else
@@ -431,7 +440,7 @@
 			if (Len(arguments.protocol))
 				loc.returnValue = arguments.protocol & "://" & loc.returnValue;
 			else
-				loc.returnValue = SpanExcluding(request.cgi.server_protocol, "/") & "://" & loc.returnValue;
+				loc.returnValue = SpanExcluding(LCase(request.cgi.server_protocol), "/") & "://" & loc.returnValue;
 		}
 	</cfscript>
 	<cfreturn loc.returnValue>
